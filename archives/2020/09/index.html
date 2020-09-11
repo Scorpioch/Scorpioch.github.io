@@ -6,21 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Git基本命令 | Hexo</title>
+  <title>Archives: 2020/9 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="整理了一些Git中常用的命令">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Git基本命令">
-<meta property="og:url" content="http://yoursite.com/2020/08/28/Git基本命令/index.html">
+  <meta name="description" content="Scorpioch">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/archives/2020/09/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="整理了一些Git中常用的命令">
+<meta property="og:description" content="Scorpioch">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2020/08/28/Git基本命令/git-1598495798627.png">
-<meta property="og:updated_time" content="2020-08-29T07:47:35.331Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git基本命令">
-<meta name="twitter:description" content="整理了一些Git中常用的命令">
-<meta name="twitter:image" content="http://yoursite.com/2020/08/28/Git基本命令/git-1598495798627.png">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="Scorpioch">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -152,197 +149,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Git基本命令" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Git基本命令
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/09/11/Debian10双系统安装与配置/" class="archive-article-date">
+  	<time datetime="2020-09-11T01:52:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-11</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/09/11/Debian10双系统安装与配置/">Debian10双系统安装与配置</a>
     </h1>
   
 
-        
-        <a href="/2020/08/28/Git基本命令/" class="archive-article-date">
-  	<time datetime="2020-08-28T14:14:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>整理了一些Git中常用的命令</p>
-<a id="more"></a>
-<h3 id="工作区与暂存区"><a href="#工作区与暂存区" class="headerlink" title="工作区与暂存区"></a>工作区与暂存区</h3><p><img src="/2020/08/28/Git基本命令/git-1598495798627.png" alt="git"></p>
-<h3 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$ git							<span class="comment"># 查看 git 的相关命令 (git --help)</span></span><br><span class="line">$ git --version                 <span class="comment"># 查看 git 的版本</span></span><br><span class="line">$ git config					<span class="comment"># 查看 git config 的相关命令</span></span><br><span class="line"></span><br><span class="line">$ git config --global user.name <span class="string">"Your Name"</span></span><br><span class="line">$ git config --global user.email <span class="string">"email@example.com"</span></span><br><span class="line"><span class="comment"># 配置所有 Git 仓库的 用户名 和 email </span></span><br><span class="line"></span><br><span class="line">$ git config --global --edit	<span class="comment"># 编辑配置文件</span></span><br><span class="line">$ git config --global --list	<span class="comment"># 检查配置</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果不加"Your Name"/"email@example.com"，则为查看仓库的用户名/邮箱</span></span><br><span class="line"><span class="comment"># 如果不加 --global 参数，则为配置当前 Git 仓库的 用户名 和 email</span></span><br><span class="line"><span class="comment"># git config 命令的 --global 参数，表明这台机器上的所有Git仓库都会使用这个配置</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$ git config --global <span class="built_in">alias</span>.别名 <span class="string">"命令全称"</span></span><br><span class="line">$ git config --global --<span class="built_in">unset</span> <span class="built_in">alias</span>.别名</span><br><span class="line"><span class="comment">#example</span></span><br><span class="line">$ git config --global alias.lg <span class="string">"log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit --date=relative"</span></span><br></pre></td></tr></table></figure>
-<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">$ git init                 <span class="comment"># 初始化git仓库</span></span><br><span class="line">$ git status               <span class="comment"># 查看当前状态</span></span><br><span class="line"></span><br><span class="line">$ git diff </span><br><span class="line">$ git diff &lt;file&gt;                </span><br><span class="line">$ git diff --cached</span><br><span class="line">$ git diff HEAD -- &lt;file&gt;</span><br><span class="line"><span class="comment"># git diff 查看工作区(workspace)和暂存区(stage/index)的区别</span></span><br><span class="line"><span class="comment"># git diff --cached 查看暂存区(stage/index)和本地仓库(local repository)的区别</span></span><br><span class="line"><span class="comment"># git diff HEAD -- &lt;file&gt; 查看工作区(workspace)和版本库里面最新版本的区别</span></span><br><span class="line"></span><br><span class="line">$ git add &lt;file&gt; 			  <span class="comment"># 添加文件，可一次性添加多个</span></span><br><span class="line">$ git add .					  <span class="comment"># 添加所有改变的文件</span></span><br><span class="line">$ git add -i 				  <span class="comment"># -interactive 进入交互式暂存编辑界面 </span></span><br><span class="line">$ git add -p &lt;file&gt;			  <span class="comment"># --patch 文件局部内容操</span></span><br><span class="line"></span><br><span class="line">$ git commit   				  <span class="comment"># 创建提交</span></span><br><span class="line">$ git commit -m &lt;message&gt;   </span><br><span class="line">$ git commit --amend 		  <span class="comment"># 修改上一次commit				  </span></span><br><span class="line"></span><br><span class="line">$ git blame &lt;file&gt;			  <span class="comment"># 查看对file的修改信息</span></span><br><span class="line"></span><br><span class="line">$ git <span class="built_in">log</span></span><br><span class="line">$ git <span class="built_in">log</span> -p &lt;file&gt;</span><br><span class="line">$ git <span class="built_in">log</span> --oneline    </span><br><span class="line">$ git <span class="built_in">log</span> --pretty=oneline </span><br><span class="line">$ git <span class="built_in">log</span> --graph --pretty=format:<span class="string">'%h -%d %s (%cr)'</span> --abbrev-commit --</span><br><span class="line">$ git <span class="built_in">log</span> --graph --pretty=oneline --abbrev-commit</span><br><span class="line">$ git <span class="built_in">log</span> --graph --oneline --decorate</span><br><span class="line"><span class="comment"># 显示从最近到最远的提交日志</span></span><br><span class="line"><span class="comment"># commit_id (版本号) -&gt; SHA1</span></span><br><span class="line"></span><br><span class="line">$ git reset --hard HEAD^</span><br><span class="line">$ git reset --hard &lt;commit_id&gt;</span><br><span class="line"><span class="comment"># HEAD    表示当前版本，也就是最新的提交</span></span><br><span class="line"><span class="comment"># HEAD^   上一个版本</span></span><br><span class="line"><span class="comment"># HEAD^^  上上一个版本</span></span><br><span class="line"><span class="comment"># HEAD~100   往上100个版本</span></span><br><span class="line"></span><br><span class="line">$ git reflog               <span class="comment"># 查看命令历史</span></span><br><span class="line"></span><br><span class="line">$ git restore &lt;file&gt;</span><br><span class="line">$ git checkout -- &lt;file&gt;</span><br><span class="line"><span class="comment">#回到最后一次 commit/add 前的状态</span></span><br><span class="line"></span><br><span class="line">$ git restore --staged &lt;file&gt;</span><br><span class="line">$ git reset HEAD &lt;file&gt;</span><br><span class="line"><span class="comment"># 把暂存区的修改撤销掉（unstage），重新放回工作区</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 已修改工作区，未修改缓存区 -&gt; git restore &lt;file&gt;</span></span><br><span class="line"><span class="comment"># 已修改工作区和缓存区，未提交 -&gt; 1.git restore --staged &lt;file&gt; 2.git restore &lt;file&gt;</span></span><br><span class="line"><span class="comment"># 已提交到版本库 -&gt; 版本回退 git reset --hard HEAD^</span></span><br><span class="line"></span><br><span class="line">$ git rm &lt;file&gt;</span><br><span class="line"><span class="comment">#等价于rm &lt;file&gt; + git add &lt;file&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></span><br><span class="line"><span class="comment"># 创建 SSH Key</span></span><br><span class="line"><span class="comment"># C:\Users\HP\.ssh</span></span><br><span class="line"></span><br><span class="line">$ git remote</span><br><span class="line"><span class="comment"># 查看远程库信息</span></span><br><span class="line">$ git remote -v</span><br><span class="line"><span class="comment"># 查看远程库详细信息</span></span><br><span class="line">$ git remote rm origin </span><br><span class="line"><span class="comment"># 删除已关联远程库origin</span></span><br><span class="line"></span><br><span class="line">$ git remote add origin git@server-name:path/repo-name.git</span><br><span class="line"><span class="comment"># 关联远程仓库</span></span><br><span class="line">$ git remote add origin git@github.com:Scorpioch/learngit.git</span><br><span class="line"><span class="comment"># example</span></span><br><span class="line"></span><br><span class="line">$ git push -u origin master</span><br><span class="line"><span class="comment"># 第一次推送master分支</span></span><br><span class="line">$ git push origin master</span><br><span class="line"><span class="comment"># 推送master分支</span></span><br><span class="line"></span><br><span class="line">$ git <span class="built_in">clone</span> git@github.com:Scorpioch/repo-name.git</span><br><span class="line"><span class="comment"># 从远程仓库克隆(ssh协议)</span></span><br></pre></td></tr></table></figure>
-<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">$ git branch 			   <span class="comment"># 查看分支</span></span><br><span class="line">$ git branch -av</span><br><span class="line">$ git branch &lt;name&gt; &lt;commit-id&gt; <span class="comment"># 创建分支</span></span><br><span class="line">$ git branch -d &lt;name&gt;     <span class="comment"># 删除分支</span></span><br><span class="line">$ git branch -D &lt;name&gt;	   <span class="comment"># 强制删除分支</span></span><br><span class="line">$ git branch -f master HEAD~3 <span class="comment"># 强制移动分支</span></span><br><span class="line">$ git branch -u origin/branch-name [branch-name] <span class="comment"># 建立remote tracking</span></span><br><span class="line">$ git branch --<span class="built_in">set</span>-upstream branch-name origin/branch-name <span class="comment"># 建立本地分支和远程分支的关联</span></span><br><span class="line"></span><br><span class="line">$ git checkout &lt;name&gt;      <span class="comment"># 切换分支</span></span><br><span class="line">$ git checkout -b &lt;name&gt;   <span class="comment"># 创建并切换分支</span></span><br><span class="line">$ git checkout -b branch-name origin/branch-name  <span class="comment"># 在本地创建和远程分支对应的分支</span></span><br><span class="line"></span><br><span class="line">$ git push 				   			<span class="comment"># 向远程推送当前所在分支</span></span><br><span class="line">$ git push &lt;remote&gt; &lt;place&gt;</span><br><span class="line">$ git push &lt;remote&gt; &lt;<span class="built_in">source</span>&gt;:&lt;destination&gt; </span><br><span class="line">$ git push &lt;remote&gt; :&lt;destination&gt;  <span class="comment"># 删除远程分支</span></span><br><span class="line"></span><br><span class="line">$ git fetch 			  		 	<span class="comment"># 从远程抓取所有更新分支</span></span><br><span class="line">$ git fetch &lt;remote&gt; &lt;place&gt;</span><br><span class="line">$ git fetch :&lt;destination&gt; 			<span class="comment"># 创建分支</span></span><br><span class="line">$ git fetch &lt;remote&gt; &lt;<span class="built_in">source</span>&gt;:&lt;destination&gt; </span><br><span class="line"></span><br><span class="line">$ git pull				   <span class="comment"># fetch + merge</span></span><br><span class="line">$ git pull --rebase        <span class="comment"># fetch + rebase</span></span><br><span class="line"> </span><br><span class="line">$ git switch &lt;name&gt;  	   <span class="comment"># 切换分支</span></span><br><span class="line">$ git switch -c &lt;name&gt; 	   <span class="comment"># 创建并切换分支</span></span><br><span class="line">$ git switch -c branch-name origin/branch-name  <span class="comment"># 在本地创建和远程分支对应的分支</span></span><br><span class="line"></span><br><span class="line">$ git merge &lt;name&gt; 		   <span class="comment"># 合并分支到当前分支</span></span><br><span class="line">$ git merge --no-ff -m &lt;message&gt; &lt;name&gt; </span><br><span class="line"><span class="comment"># 合并的分支如果存在conflict,需要手动修复</span></span><br><span class="line"><span class="comment"># 禁用Fast Forword模式，产生一次commit</span></span><br><span class="line"></span><br><span class="line">$ git mergetool   		   <span class="comment"># 可用来解决冲突</span></span><br><span class="line"></span><br><span class="line">$ git stash						<span class="comment"># 保存当前工作区和暂存区的修改状态</span></span><br><span class="line">$ git stash apply &lt;stash@&#123;id&#125;&gt;	<span class="comment"># 恢复现场，stash内容不删除</span></span><br><span class="line">$ git stash drop &lt;stash@&#123;id&#125;&gt;	<span class="comment"># 删除stash内容</span></span><br><span class="line">$ git stash pop					<span class="comment"># 恢复并删除stash内容</span></span><br><span class="line">$ git stash list				<span class="comment"># 查看保存现场的列表</span></span><br><span class="line"></span><br><span class="line">$ git cherry-pick &lt;commit&gt; </span><br><span class="line"><span class="comment"># 复制一个特定的提交到当前分支</span></span><br><span class="line"></span><br><span class="line">$ git rebase branch-name</span><br><span class="line">$ git rebase -i HEAD~5</span><br><span class="line"><span class="comment"># 交互式rebase，可以调整顺序，增删合并</span></span><br><span class="line">$ git rebase --<span class="built_in">continue</span></span><br><span class="line"><span class="comment"># 修复conflict并add后无需commit，继续rebase</span></span><br><span class="line">$ git rebase --abort</span><br><span class="line"><span class="comment"># 终止rebase并回到开始前的状态</span></span><br></pre></td></tr></table></figure>
-<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换到对应的分支 branch 上,查看或者操作对应的标签 tag </span></span><br><span class="line">$ git tag  查看所有的标签</span><br><span class="line">$ git tag &lt;tagname&gt;  打标签(默认标签是打在最新提交的commit上) 如: git tag v1.0</span><br><span class="line">$ git tag &lt;tagname&gt; &lt;commit_id&gt;  给对应的 commit_id 打标签</span><br><span class="line">$ git tag -a &lt;tagname&gt; -m <span class="string">"标签说明信息"</span> &lt;commit_id&gt; 创建带有说明的标签，用-a指定标签名，-m指定说明文字</span><br><span class="line">$ git tag -d &lt;tagname&gt; 删除一个本地标签</span><br><span class="line">$ git push origin :refs/tags/&lt;tagname&gt;可以删除一个远程标签</span><br><span class="line">$ git show &lt;tagname&gt;  查看标签信息</span><br><span class="line"></span><br><span class="line">$ git push origin &lt;tagname&gt;  推送一个本地标签到远程</span><br><span class="line">$ git push origin --tags     一次性推送全部尚未推送到远程的本地标签</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除远程标签,需要先删除本地标签,然后在删除远程标签,如:删除标签 v0.9</span></span><br><span class="line">$ git tag -d v0.9</span><br><span class="line">$ git push origin :refs/tags/v0.9</span><br></pre></td></tr></table></figure>
-<h3 id="学习网站"><a href="#学习网站" class="headerlink" title="学习网站"></a>学习网站</h3><ul>
-<li><p><a href="http://gitbook.liuhui998.com/index.html" target="_blank" rel="noopener">Git Community Book</a> </p>
-</li>
-<li><p><a href="https://try.github.io/" target="_blank" rel="noopener">Resources to learn Git</a></p>
-</li>
-<li><p><a href="https://git-scm.com/doc" target="_blank" rel="noopener">Git Documentation</a></p>
-</li>
-<li><p><a href="https://gitee.com/liaoxuefeng/learn-java/raw/master/teach/git-cheatsheet.pdf" target="_blank" rel="noopener">Git Cheat Sheet</a></p>
-</li>
-</ul>
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/28/Git基本命令/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/09/11/Debian10双系统安装与配置/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Debian10双系统安装与配置
-        
-      </div>
-    </a>
   
   
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Git基本命令" data-title="Git基本命令" data-url="http://yoursite.com/2020/08/28/Git基本命令/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -366,8 +215,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

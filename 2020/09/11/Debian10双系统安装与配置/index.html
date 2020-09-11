@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Git基本命令 | Hexo</title>
+  <title>Debian10双系统安装与配置 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="整理了一些Git中常用的命令">
+  <meta name="description" content="Win10下安装双系统，按照PA的要求选择了Debian10，简单记录安装配置过程和踩的一些坑">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git基本命令">
-<meta property="og:url" content="http://yoursite.com/2020/08/28/Git基本命令/index.html">
+<meta property="og:title" content="Debian10双系统安装与配置">
+<meta property="og:url" content="http://yoursite.com/2020/09/11/Debian10双系统安装与配置/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="整理了一些Git中常用的命令">
+<meta property="og:description" content="Win10下安装双系统，按照PA的要求选择了Debian10，简单记录安装配置过程和踩的一些坑">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2020/08/28/Git基本命令/git-1598495798627.png">
-<meta property="og:updated_time" content="2020-08-29T07:47:35.331Z">
+<meta property="og:updated_time" content="2020-09-11T01:53:15.564Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git基本命令">
-<meta name="twitter:description" content="整理了一些Git中常用的命令">
-<meta name="twitter:image" content="http://yoursite.com/2020/08/28/Git基本命令/git-1598495798627.png">
+<meta name="twitter:title" content="Debian10双系统安装与配置">
+<meta name="twitter:description" content="Win10下安装双系统，按照PA的要求选择了Debian10，简单记录安装配置过程和踩的一些坑">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -152,43 +150,118 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Git基本命令" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Debian10双系统安装与配置" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Git基本命令
+      Debian10双系统安装与配置
     </h1>
   
 
         
-        <a href="/2020/08/28/Git基本命令/" class="archive-article-date">
-  	<time datetime="2020-08-28T14:14:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-28</time>
+        <a href="/2020/09/11/Debian10双系统安装与配置/" class="archive-article-date">
+  	<time datetime="2020-09-11T01:52:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>整理了一些Git中常用的命令</p>
+        <p>Win10下安装双系统，按照PA的要求选择了Debian10，简单记录安装配置过程和踩的一些坑</p>
 <a id="more"></a>
-<h3 id="工作区与暂存区"><a href="#工作区与暂存区" class="headerlink" title="工作区与暂存区"></a>工作区与暂存区</h3><p><img src="/2020/08/28/Git基本命令/git-1598495798627.png" alt="git"></p>
-<h3 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$ git							<span class="comment"># 查看 git 的相关命令 (git --help)</span></span><br><span class="line">$ git --version                 <span class="comment"># 查看 git 的版本</span></span><br><span class="line">$ git config					<span class="comment"># 查看 git config 的相关命令</span></span><br><span class="line"></span><br><span class="line">$ git config --global user.name <span class="string">"Your Name"</span></span><br><span class="line">$ git config --global user.email <span class="string">"email@example.com"</span></span><br><span class="line"><span class="comment"># 配置所有 Git 仓库的 用户名 和 email </span></span><br><span class="line"></span><br><span class="line">$ git config --global --edit	<span class="comment"># 编辑配置文件</span></span><br><span class="line">$ git config --global --list	<span class="comment"># 检查配置</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果不加"Your Name"/"email@example.com"，则为查看仓库的用户名/邮箱</span></span><br><span class="line"><span class="comment"># 如果不加 --global 参数，则为配置当前 Git 仓库的 用户名 和 email</span></span><br><span class="line"><span class="comment"># git config 命令的 --global 参数，表明这台机器上的所有Git仓库都会使用这个配置</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$ git config --global <span class="built_in">alias</span>.别名 <span class="string">"命令全称"</span></span><br><span class="line">$ git config --global --<span class="built_in">unset</span> <span class="built_in">alias</span>.别名</span><br><span class="line"><span class="comment">#example</span></span><br><span class="line">$ git config --global alias.lg <span class="string">"log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit --date=relative"</span></span><br></pre></td></tr></table></figure>
-<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">$ git init                 <span class="comment"># 初始化git仓库</span></span><br><span class="line">$ git status               <span class="comment"># 查看当前状态</span></span><br><span class="line"></span><br><span class="line">$ git diff </span><br><span class="line">$ git diff &lt;file&gt;                </span><br><span class="line">$ git diff --cached</span><br><span class="line">$ git diff HEAD -- &lt;file&gt;</span><br><span class="line"><span class="comment"># git diff 查看工作区(workspace)和暂存区(stage/index)的区别</span></span><br><span class="line"><span class="comment"># git diff --cached 查看暂存区(stage/index)和本地仓库(local repository)的区别</span></span><br><span class="line"><span class="comment"># git diff HEAD -- &lt;file&gt; 查看工作区(workspace)和版本库里面最新版本的区别</span></span><br><span class="line"></span><br><span class="line">$ git add &lt;file&gt; 			  <span class="comment"># 添加文件，可一次性添加多个</span></span><br><span class="line">$ git add .					  <span class="comment"># 添加所有改变的文件</span></span><br><span class="line">$ git add -i 				  <span class="comment"># -interactive 进入交互式暂存编辑界面 </span></span><br><span class="line">$ git add -p &lt;file&gt;			  <span class="comment"># --patch 文件局部内容操</span></span><br><span class="line"></span><br><span class="line">$ git commit   				  <span class="comment"># 创建提交</span></span><br><span class="line">$ git commit -m &lt;message&gt;   </span><br><span class="line">$ git commit --amend 		  <span class="comment"># 修改上一次commit				  </span></span><br><span class="line"></span><br><span class="line">$ git blame &lt;file&gt;			  <span class="comment"># 查看对file的修改信息</span></span><br><span class="line"></span><br><span class="line">$ git <span class="built_in">log</span></span><br><span class="line">$ git <span class="built_in">log</span> -p &lt;file&gt;</span><br><span class="line">$ git <span class="built_in">log</span> --oneline    </span><br><span class="line">$ git <span class="built_in">log</span> --pretty=oneline </span><br><span class="line">$ git <span class="built_in">log</span> --graph --pretty=format:<span class="string">'%h -%d %s (%cr)'</span> --abbrev-commit --</span><br><span class="line">$ git <span class="built_in">log</span> --graph --pretty=oneline --abbrev-commit</span><br><span class="line">$ git <span class="built_in">log</span> --graph --oneline --decorate</span><br><span class="line"><span class="comment"># 显示从最近到最远的提交日志</span></span><br><span class="line"><span class="comment"># commit_id (版本号) -&gt; SHA1</span></span><br><span class="line"></span><br><span class="line">$ git reset --hard HEAD^</span><br><span class="line">$ git reset --hard &lt;commit_id&gt;</span><br><span class="line"><span class="comment"># HEAD    表示当前版本，也就是最新的提交</span></span><br><span class="line"><span class="comment"># HEAD^   上一个版本</span></span><br><span class="line"><span class="comment"># HEAD^^  上上一个版本</span></span><br><span class="line"><span class="comment"># HEAD~100   往上100个版本</span></span><br><span class="line"></span><br><span class="line">$ git reflog               <span class="comment"># 查看命令历史</span></span><br><span class="line"></span><br><span class="line">$ git restore &lt;file&gt;</span><br><span class="line">$ git checkout -- &lt;file&gt;</span><br><span class="line"><span class="comment">#回到最后一次 commit/add 前的状态</span></span><br><span class="line"></span><br><span class="line">$ git restore --staged &lt;file&gt;</span><br><span class="line">$ git reset HEAD &lt;file&gt;</span><br><span class="line"><span class="comment"># 把暂存区的修改撤销掉（unstage），重新放回工作区</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 已修改工作区，未修改缓存区 -&gt; git restore &lt;file&gt;</span></span><br><span class="line"><span class="comment"># 已修改工作区和缓存区，未提交 -&gt; 1.git restore --staged &lt;file&gt; 2.git restore &lt;file&gt;</span></span><br><span class="line"><span class="comment"># 已提交到版本库 -&gt; 版本回退 git reset --hard HEAD^</span></span><br><span class="line"></span><br><span class="line">$ git rm &lt;file&gt;</span><br><span class="line"><span class="comment">#等价于rm &lt;file&gt; + git add &lt;file&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></span><br><span class="line"><span class="comment"># 创建 SSH Key</span></span><br><span class="line"><span class="comment"># C:\Users\HP\.ssh</span></span><br><span class="line"></span><br><span class="line">$ git remote</span><br><span class="line"><span class="comment"># 查看远程库信息</span></span><br><span class="line">$ git remote -v</span><br><span class="line"><span class="comment"># 查看远程库详细信息</span></span><br><span class="line">$ git remote rm origin </span><br><span class="line"><span class="comment"># 删除已关联远程库origin</span></span><br><span class="line"></span><br><span class="line">$ git remote add origin git@server-name:path/repo-name.git</span><br><span class="line"><span class="comment"># 关联远程仓库</span></span><br><span class="line">$ git remote add origin git@github.com:Scorpioch/learngit.git</span><br><span class="line"><span class="comment"># example</span></span><br><span class="line"></span><br><span class="line">$ git push -u origin master</span><br><span class="line"><span class="comment"># 第一次推送master分支</span></span><br><span class="line">$ git push origin master</span><br><span class="line"><span class="comment"># 推送master分支</span></span><br><span class="line"></span><br><span class="line">$ git <span class="built_in">clone</span> git@github.com:Scorpioch/repo-name.git</span><br><span class="line"><span class="comment"># 从远程仓库克隆(ssh协议)</span></span><br></pre></td></tr></table></figure>
-<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">$ git branch 			   <span class="comment"># 查看分支</span></span><br><span class="line">$ git branch -av</span><br><span class="line">$ git branch &lt;name&gt; &lt;commit-id&gt; <span class="comment"># 创建分支</span></span><br><span class="line">$ git branch -d &lt;name&gt;     <span class="comment"># 删除分支</span></span><br><span class="line">$ git branch -D &lt;name&gt;	   <span class="comment"># 强制删除分支</span></span><br><span class="line">$ git branch -f master HEAD~3 <span class="comment"># 强制移动分支</span></span><br><span class="line">$ git branch -u origin/branch-name [branch-name] <span class="comment"># 建立remote tracking</span></span><br><span class="line">$ git branch --<span class="built_in">set</span>-upstream branch-name origin/branch-name <span class="comment"># 建立本地分支和远程分支的关联</span></span><br><span class="line"></span><br><span class="line">$ git checkout &lt;name&gt;      <span class="comment"># 切换分支</span></span><br><span class="line">$ git checkout -b &lt;name&gt;   <span class="comment"># 创建并切换分支</span></span><br><span class="line">$ git checkout -b branch-name origin/branch-name  <span class="comment"># 在本地创建和远程分支对应的分支</span></span><br><span class="line"></span><br><span class="line">$ git push 				   			<span class="comment"># 向远程推送当前所在分支</span></span><br><span class="line">$ git push &lt;remote&gt; &lt;place&gt;</span><br><span class="line">$ git push &lt;remote&gt; &lt;<span class="built_in">source</span>&gt;:&lt;destination&gt; </span><br><span class="line">$ git push &lt;remote&gt; :&lt;destination&gt;  <span class="comment"># 删除远程分支</span></span><br><span class="line"></span><br><span class="line">$ git fetch 			  		 	<span class="comment"># 从远程抓取所有更新分支</span></span><br><span class="line">$ git fetch &lt;remote&gt; &lt;place&gt;</span><br><span class="line">$ git fetch :&lt;destination&gt; 			<span class="comment"># 创建分支</span></span><br><span class="line">$ git fetch &lt;remote&gt; &lt;<span class="built_in">source</span>&gt;:&lt;destination&gt; </span><br><span class="line"></span><br><span class="line">$ git pull				   <span class="comment"># fetch + merge</span></span><br><span class="line">$ git pull --rebase        <span class="comment"># fetch + rebase</span></span><br><span class="line"> </span><br><span class="line">$ git switch &lt;name&gt;  	   <span class="comment"># 切换分支</span></span><br><span class="line">$ git switch -c &lt;name&gt; 	   <span class="comment"># 创建并切换分支</span></span><br><span class="line">$ git switch -c branch-name origin/branch-name  <span class="comment"># 在本地创建和远程分支对应的分支</span></span><br><span class="line"></span><br><span class="line">$ git merge &lt;name&gt; 		   <span class="comment"># 合并分支到当前分支</span></span><br><span class="line">$ git merge --no-ff -m &lt;message&gt; &lt;name&gt; </span><br><span class="line"><span class="comment"># 合并的分支如果存在conflict,需要手动修复</span></span><br><span class="line"><span class="comment"># 禁用Fast Forword模式，产生一次commit</span></span><br><span class="line"></span><br><span class="line">$ git mergetool   		   <span class="comment"># 可用来解决冲突</span></span><br><span class="line"></span><br><span class="line">$ git stash						<span class="comment"># 保存当前工作区和暂存区的修改状态</span></span><br><span class="line">$ git stash apply &lt;stash@&#123;id&#125;&gt;	<span class="comment"># 恢复现场，stash内容不删除</span></span><br><span class="line">$ git stash drop &lt;stash@&#123;id&#125;&gt;	<span class="comment"># 删除stash内容</span></span><br><span class="line">$ git stash pop					<span class="comment"># 恢复并删除stash内容</span></span><br><span class="line">$ git stash list				<span class="comment"># 查看保存现场的列表</span></span><br><span class="line"></span><br><span class="line">$ git cherry-pick &lt;commit&gt; </span><br><span class="line"><span class="comment"># 复制一个特定的提交到当前分支</span></span><br><span class="line"></span><br><span class="line">$ git rebase branch-name</span><br><span class="line">$ git rebase -i HEAD~5</span><br><span class="line"><span class="comment"># 交互式rebase，可以调整顺序，增删合并</span></span><br><span class="line">$ git rebase --<span class="built_in">continue</span></span><br><span class="line"><span class="comment"># 修复conflict并add后无需commit，继续rebase</span></span><br><span class="line">$ git rebase --abort</span><br><span class="line"><span class="comment"># 终止rebase并回到开始前的状态</span></span><br></pre></td></tr></table></figure>
-<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换到对应的分支 branch 上,查看或者操作对应的标签 tag </span></span><br><span class="line">$ git tag  查看所有的标签</span><br><span class="line">$ git tag &lt;tagname&gt;  打标签(默认标签是打在最新提交的commit上) 如: git tag v1.0</span><br><span class="line">$ git tag &lt;tagname&gt; &lt;commit_id&gt;  给对应的 commit_id 打标签</span><br><span class="line">$ git tag -a &lt;tagname&gt; -m <span class="string">"标签说明信息"</span> &lt;commit_id&gt; 创建带有说明的标签，用-a指定标签名，-m指定说明文字</span><br><span class="line">$ git tag -d &lt;tagname&gt; 删除一个本地标签</span><br><span class="line">$ git push origin :refs/tags/&lt;tagname&gt;可以删除一个远程标签</span><br><span class="line">$ git show &lt;tagname&gt;  查看标签信息</span><br><span class="line"></span><br><span class="line">$ git push origin &lt;tagname&gt;  推送一个本地标签到远程</span><br><span class="line">$ git push origin --tags     一次性推送全部尚未推送到远程的本地标签</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除远程标签,需要先删除本地标签,然后在删除远程标签,如:删除标签 v0.9</span></span><br><span class="line">$ git tag -d v0.9</span><br><span class="line">$ git push origin :refs/tags/v0.9</span><br></pre></td></tr></table></figure>
-<h3 id="学习网站"><a href="#学习网站" class="headerlink" title="学习网站"></a>学习网站</h3><ul>
-<li><p><a href="http://gitbook.liuhui998.com/index.html" target="_blank" rel="noopener">Git Community Book</a> </p>
+<h2 id="双系统安装"><a href="#双系统安装" class="headerlink" title="双系统安装"></a>双系统安装</h2><h3 id="通过压缩卷分区"><a href="#通过压缩卷分区" class="headerlink" title="通过压缩卷分区"></a>通过压缩卷分区</h3><p>磁盘管理 - 右击选择D盘（依据个人选择） - 压缩卷 - 压缩空间量 （50G = 50*1024MB ）- 压缩，看到有50G未分配空间即可</p>
+<h3 id="Debian-10-的可引导-USB"><a href="#Debian-10-的可引导-USB" class="headerlink" title="Debian 10 的可引导 USB"></a>Debian 10 的可引导 USB</h3><ul>
+<li>Debian10 官网下载 debian-10.?.?-amd64-xfce-CD-1.iso</li>
+<li>准备一个空的U盘（8G+）</li>
+<li>下载并打开UltraISO软碟通，找到下载的iso镜像文件并双击加载，菜单栏-启动-写入硬盘映像，选择U盘，写入方式USB-HDD+（默认），写入即可</li>
+</ul>
+<h3 id="BIOS设置"><a href="#BIOS设置" class="headerlink" title="BIOS设置"></a>BIOS设置</h3><ul>
+<li>重启电脑，不停点按F10进入BIOS设置界面（进入的按键视电脑型号而定，HP为F10）。</li>
+<li>进入System Configuration，找到Boot Option，将USB BOOT设置为Enable，Secure Boot个人没有关闭也没有影响到后续操作。</li>
+<li>uefi启动中将USB移到OS上面。然后就可以保存并退出了。</li>
+</ul>
+<h3 id="Debian10安装"><a href="#Debian10安装" class="headerlink" title="Debian10安装"></a>Debian10安装</h3><ul>
+<li><p>如果没有发生意外，在重启时会进入Debian10操作系统的安装界面。选择Graphics Install，然后按照无脑安装即可，直到Partition disks。</p>
 </li>
-<li><p><a href="https://try.github.io/" target="_blank" rel="noopener">Resources to learn Git</a></p>
+<li><p>由于对Linux分区的相关知识不甚了解，我选择了第一个选项，选择当前最大可使用的分区（就是第一步中分出的50G，请务必确认无误，否则可能会损坏原系统）。</p>
 </li>
-<li><p><a href="https://git-scm.com/doc" target="_blank" rel="noopener">Git Documentation</a></p>
+<li>然后继续无脑安装。</li>
+<li><p>安装结束，拔掉U盘</p>
 </li>
-<li><p><a href="https://gitee.com/liaoxuefeng/learn-java/raw/master/teach/git-cheatsheet.pdf" target="_blank" rel="noopener">Git Cheat Sheet</a></p>
+<li><p>据说断网安装会快很多（tips始终慢我一步）</p>
 </li>
+</ul>
+<h3 id="双系统引导"><a href="#双系统引导" class="headerlink" title="双系统引导"></a>双系统引导</h3><p>在上述步骤完成后，如果重启电脑发现已经有双系统的选择了，恭喜你大功告成。但是我第一次安装Debian10结束后，重启直接进入了Windows系统。在STFW+魔改了诸多设置无果的情况下，选择重装。经过漫长的等待，在第二次安装结束，重新启动电脑之后，又直接进入了Windows，在查阅诸多资料后终于在洛谷日报里（见参考资料）找到了问题的解决方法（可能是Hp专属问题？不愧是后浪啊orz）。</p>
+<p>老方法进入BIOS，按上次找到OS Boot Manager并回车，将Debian10移动到上方，保存退出，重启电脑。（如果没有什么奇奇怪怪的问题）在开机时就可以看到系统选择的界面了。</p>
+<p><strong>参考资料</strong></p>
+<ul>
+<li><p><a href="https://baijiahao.baidu.com/s?id=1627233943941190109&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">Windows 10如何通过压缩卷分区？</a></p>
+</li>
+<li><p><a href="https://jingyan.baidu.com/article/a65957f42b151124e77f9b68.html" target="_blank" rel="noopener">软碟通制作U盘启动盘</a></p>
+</li>
+<li><a href="https://www.luogu.com.cn/blog/SIGSEGV/multi-os-install-ubuntu#" target="_blank" rel="noopener">双系统教程</a></li>
+</ul>
+<h2 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h2><h3 id="将user添加进sudoers"><a href="#将user添加进sudoers" class="headerlink" title="将user添加进sudoers"></a>将user添加进sudoers</h3><p>按照PA的guide执行下列命令之后，sudo whoami不能正确执行。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">su -   <span class="comment"># we still need to switch to the root account first</span></span><br><span class="line">adduser username sudo  <span class="comment"># change `username` to your user name</span></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line">whoami</span><br><span class="line">sudo whoami</span><br></pre></td></tr></table></figure>
+<p>上网查找后，发现手动修改/etc/sudoers文件即可。首先给sudoers加上w权限，然后找到 root ALL=(ALL:ALL) ALL一行，下面加上一行username ALL=(ALL:ALL) ALL即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">chmod +w /etc/sudoers</span><br><span class="line">vim /etc/sudoers</span><br><span class="line">-----------vim-------------</span><br><span class="line">root     ALL=(ALL:ALL) ALL</span><br><span class="line">username    ALL=(ALL:ALL) ALL                        <span class="comment"># 用户user执行sudo时需要密码。</span></span><br><span class="line"><span class="comment">#username   ALL=NOPASSWD:ALL                         # 用户user执行sudo时不需要密码。</span></span><br><span class="line"><span class="comment">#username   ALL=NOPASSWD:/etc/network/interfaces     # 用户user执行只有sudo执行/etc/network/interfaces的权限，执行时不需要密码。</span></span><br><span class="line">-----------vim-------------</span><br><span class="line">chmod -w /etc/sudoers</span><br></pre></td></tr></table></figure>
+<p><strong>参考资料</strong></p>
+<ul>
+<li><a href="https://blog.csdn.net/weixin_43014927/article/details/99619549?utm_medium=distribute.pc_relevant.none-task-blog-title-1&amp;spm=1001.2101.3001.4242" target="_blank" rel="noopener">Debian普通用户添加sudo权限</a></li>
+</ul>
+<h3 id="设置软件源"><a href="#设置软件源" class="headerlink" title="设置软件源"></a>设置软件源</h3><p>软件源在/etc/apt/sources.list中，更新后执行命令apt-get update</p>
+<p>按照PA的原guide做有点小问题，在我怎么也想不明白原因之后一天yls在群里做出了解答。</p>
+<p>原guide是这样写的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">echo</span> <span class="string">"deb http://mirrors.tuna.tsinghua.edu.cn/debian/ stable main"</span> &gt; /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+<p>然后在执行时仍会接收到Permission denied。我选择先切换到root，再执行此命令就ok了。实际上sudo只会施加给echo，后面的重定向失效了，所以仍会收到Permission denied</p>
+<p>之后的guide改成了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash -c <span class="string">'echo "deb http://mirrors.tuna.tsinghua.edu.cn/debian/ stable main" &gt; /etc/apt/sources.list'</span></span><br></pre></td></tr></table></figure>
+<p>最好对原有文件先做个备份。</p>
+<h3 id="WIFI配置"><a href="#WIFI配置" class="headerlink" title="WIFI配置"></a>WIFI配置</h3><p>首先要连接到有线网络</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apt/source.list <span class="comment">#按照 参考资料2 在source.list中添加一行</span></span><br><span class="line">-----source.list-------</span><br><span class="line">deb http://ftp.cn.debian.org/debian sid main non-free</span><br><span class="line">-----source.list-------</span><br><span class="line">sudo apt-get update </span><br><span class="line">sudo apt-get install firmware-iwlwifi</span><br><span class="line">modprobe -r iwlwifi</span><br><span class="line">modprobe iwlwifi			  <span class="comment">#稍等一会儿就可以在右上角搜到无线网络了</span></span><br></pre></td></tr></table></figure>
+<p><strong>参考资料</strong></p>
+<ul>
+<li><a href="https://www.debian.cn/archives/3688" target="_blank" rel="noopener">Debian如何安装无线网卡驱动</a></li>
+<li><a href="https://packages.debian.org/sid/all/firmware-iwlwifi/download" target="_blank" rel="noopener">firmware-iwlwifi</a></li>
+</ul>
+<h3 id="设置中文输入法"><a href="#设置中文输入法" class="headerlink" title="设置中文输入法"></a>设置中文输入法</h3><ul>
+<li><p>下载一个中文输入法（我选择了搜狗输入法），然后跟着教程安装（见参考资料1）</p>
+</li>
+<li><p>安装好之后显示中文仍然是乱码，跟着网上教程下载了locales魔改一番好像还是无果</p>
+</li>
+<li><p>最后看到某贴吧大神说原因可能是系统没有中文字库，于是执行下列命令，重启电脑，中文就能正常显示了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ttf-wqy-zenhei</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>参考资料</strong></p>
+<ul>
+<li><a href="https://jingyan.baidu.com/article/925f8cb88390f5c0dde056a0.html" target="_blank" rel="noopener">搜狗输入法 for linux 安装</a></li>
+<li><a href="https://blog.csdn.net/bocai_xiaodaidai/article/details/99639058" target="_blank" rel="noopener">Debian系统解决中文乱码问题</a></li>
+<li><a href="https://tieba.baidu.com/p/4939036716" target="_blank" rel="noopener">debian中文乱码怎么解决</a></li>
+</ul>
+<h3 id="调节系统亮度"><a href="#调节系统亮度" class="headerlink" title="调节系统亮度"></a>调节系统亮度</h3><p>安装好后电脑亮度非常低，且 fn+F4/F5 按键失灵(Hp)，体验极差</p>
+<p>试了很多方法之后发现根本问题在于Intel集成显卡</p>
+<blockquote>
+<p>fn调节的是/sys/class/backlight/acpi_video0/brightness文件，而Intel的文件是/sys/class/backlight/intel_backlight/brightness</p>
+</blockquote>
+<p>所以说找到对应的文件修改即可。</p>
+<p>/sys/class/backlight/intel_backlight目录下有max_brightness可以查看最大亮度，实测只需按照下面的命令修改brightness，就可以永久改变屏幕亮度，修改后actual_brightness会自动变为和brightness一样的值。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">su -</span><br><span class="line">chmod +w /sys/class/backlight/intel_backlight/brightness <span class="comment">#默认情况没有写的权限</span></span><br><span class="line"><span class="built_in">echo</span> 50000  &gt; /sys/class/backlight/intel_backlight/brightness</span><br></pre></td></tr></table></figure>
+<p><strong>参考资料</strong></p>
+<ul>
+<li><p><a href="https://www.cnblogs.com/jhcelue/p/7106245.html" target="_blank" rel="noopener">cnblogs</a></p>
+</li>
+<li><p><a href="https://blog.csdn.net/weixin_43599336/article/details/85981442" target="_blank" rel="noopener">csdn</a></p>
+</li>
+</ul>
+<h3 id="关闭系统警告音"><a href="#关闭系统警告音" class="headerlink" title="关闭系统警告音"></a>关闭系统警告音</h3><p>在空白的输入框里按下backspace键后，电脑会产生“滴”的一声警告音（让室友回忆起了面包板短路的恐惧）。在Debian10下，只需执行下列命令即可</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo rmmod pcspkr <span class="comment">#临时修改</span></span><br><span class="line"></span><br><span class="line">su -</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"blacklist pcspkr"</span> &gt; /etc/modprobe.d/blacklist.conf <span class="comment">#永久修改，重启后生效</span></span><br></pre></td></tr></table></figure>
+<p><strong>参考资料</strong></p>
+<ul>
+<li><a href="https://blog.csdn.net/CC_JustDoIt/article/details/5887742?utm_source=blogxgwz1" target="_blank" rel="noopener">csdn</a></li>
 </ul>
 
       
@@ -269,7 +342,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/28/Git基本命令/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/11/Debian10双系统安装与配置/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -283,15 +356,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/09/11/Debian10双系统安装与配置/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Debian10双系统安装与配置
-        
-      </div>
-    </a>
   
+    <a href="/2020/08/28/Git基本命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Git基本命令</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -317,7 +386,7 @@
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Git基本命令" data-title="Git基本命令" data-url="http://yoursite.com/2020/08/28/Git基本命令/"></div>
+	<div class="ds-thread" data-thread-key="Debian10双系统安装与配置" data-title="Debian10双系统安装与配置" data-url="http://yoursite.com/2020/09/11/Debian10双系统安装与配置/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
