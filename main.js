@@ -1,47 +1,72 @@
 (() => {
   'use strict';
-  const p = window.PROFILE;
+  const profile = window.PROFILE;
   const strings = {
-    en: {navAbout:'About',navResearch:'Research',navPublications:'Publications',navContact:'Contact',field:'THEORETICAL COMPUTER SCIENCE',getInTouch:'Get in touch',viewPublications:'View publications',templateNote:'Personal details are placeholders.',graphCaption:'A little structure.',researchTitle:'Research interests',researchNote:'Example areas; replace with your own research interests.',publicationsTitle:'Selected publications',publicationsIntro:'Papers, preprints, and other research work.',publicationsNote:'The entries above show the layout only; no actual publications have been added.',contactTitle:'Contact',contactIntro:'For research conversations and academic correspondence.',footerTag:'Ideas, proofs, and open questions.',backToTop:'Back to top',abstract:'Abstract',emailPending:'Your email address goes here',empty:'No publications listed yet.'},
-    zh: {navAbout:'关于',navResearch:'研究方向',navPublications:'论文',navContact:'联系',field:'理论计算机科学',getInTouch:'联系我',viewPublications:'查看论文',templateNote:'个人资料尚待填写，当前为占位内容。',graphCaption:'从结构出发。',researchTitle:'研究方向',researchNote:'以上为示例方向，请替换为你自己的研究兴趣。',publicationsTitle:'代表论文',publicationsIntro:'论文、预印本与其他研究工作。',publicationsNote:'以上条目仅展示排版，尚未添加真实论文。',contactTitle:'联系方式',contactIntro:'欢迎交流研究问题与学术想法。',footerTag:'想法、证明与开放问题。',backToTop:'回到顶部',abstract:'摘要',emailPending:'在这里填写你的邮箱',empty:'暂未列出论文。'}
+    en: { navAbout: 'About', navResearch: 'Research', navEducation: 'Education', navPublications: 'Publications', field: 'THEORETICAL COMPUTER SCIENCE', graphCaption: 'A little structure.', researchTitle: 'Research interests', educationTitle: 'Education', publicationsTitle: 'Publications', authorNote: 'Authors are listed alphabetically unless otherwise stated.', footerTag: 'Ideas, proofs, and open questions.', backToTop: 'Back to top', resources: 'Resources for', empty: 'No publications listed yet.' },
+    zh: { navAbout: '关于', navResearch: '研究方向', navEducation: '教育经历', navPublications: '论文', field: '理论计算机科学', graphCaption: '从结构出发。', researchTitle: '研究方向', educationTitle: '教育经历', publicationsTitle: '论文', authorNote: '除非另有说明，作者按姓氏字母顺序排列。', footerTag: '想法、证明与开放问题。', backToTop: '回到顶部', resources: '论文资源：', empty: '暂未列出论文。' }
   };
   let lang = 'en';
-  try { const saved=localStorage.getItem('homepage-language'); if(saved==='zh'||saved==='en') lang=saved; } catch {}
+  try { const saved = localStorage.getItem('homepage-language'); if (saved === 'zh' || saved === 'en') lang = saved; } catch {}
   const localized = value => typeof value === 'string' ? value : (value?.[lang] || value?.en || '');
-  const el = (tag, cls, value) => { const e=document.createElement(tag); if(cls)e.className=cls;if(value!==undefined)e.textContent=value;return e; };
-  const safeUrl = value => { try { const u=new URL(value);return ['https:','http:'].includes(u.protocol)?u.href:null; }catch{return null;} };
-  function link(item) {const url=safeUrl(item.url);if(!url)return null;const a=el('a','',localized(item.label));a.href=url;a.target='_blank';a.rel='noopener noreferrer';return a;}
-  function render() {
-    document.documentElement.lang=lang==='zh'?'zh-CN':'en';
-    document.title=`${lang==='zh'?(p.chineseName||p.name):p.name} · ${lang==='zh'?'个人主页':'Academic Homepage'}`;
-    document.querySelectorAll('[data-i18n]').forEach(e=>e.textContent=strings[lang][e.dataset.i18n]);
-    document.querySelectorAll('[data-name]').forEach(e=>e.textContent=p.name);
-    document.querySelectorAll('[data-chinese-name]').forEach(e=>e.textContent=p.chineseName||'');
-    document.querySelectorAll('[data-profile]').forEach(e=>e.textContent=localized(p[e.dataset.profile]));
-    const btn=document.getElementById('language-toggle');btn.replaceChildren(document.createTextNode(lang==='en'?'中文 ':'EN '),el('span','','↗'));btn.lastChild.setAttribute('aria-hidden','true');btn.setAttribute('aria-label',lang==='en'?'切换为中文':'Switch to English');
-    const topics=document.getElementById('research-topics');topics.replaceChildren(...p.interests.map(t=>el('span','topic',localized(t))));
-    const list=document.getElementById('publication-list');list.replaceChildren();
-    if(!p.publications.length)list.append(el('p','empty-publications',strings[lang].empty));
-    p.publications.forEach(pub=>{
-      const row=el('article','publication');row.append(el('div','pub-year',pub.year));
-      const content=el('div','pub-content');
-      content.append(el('h3','pub-title',localized(pub.title)));
-      if(localized(pub.authors)){
-        const authors=el('p','pub-authors');const parts=localized(pub.authors).split(p.name);
-        parts.forEach((part,i)=>{if(i)authors.append(el('strong','',p.name));authors.append(document.createTextNode(part));});content.append(authors);
-      }
-      content.append(el('p','pub-venue',localized(pub.venue)));
-      const actions=el('div','pub-actions');(pub.links||[]).forEach(item=>{const a=link(item);if(a)actions.append(a);});
-      if(localized(pub.abstract)){const d=el('details');d.append(el('summary','',strings[lang].abstract),el('p','abstract',localized(pub.abstract)));actions.append(d);}
-      content.append(actions);row.append(content);list.append(row);
-    });
-    const email=document.getElementById('email-container');email.replaceChildren();
-    if(p.email&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(p.email)){const a=el('a','email',p.email);a.href='mailto:'+p.email;email.append(a);}else{email.append(el('span','email pending',strings[lang].emailPending));}
-    const profiles=document.getElementById('profile-links');profiles.replaceChildren();(p.links||[]).forEach(item=>{const a=link(item);if(a)profiles.append(a);});
-    ['template-note','research-note','publications-note'].forEach(id=>document.getElementById(id).classList.toggle('hidden',!p.isTemplate));
-    document.getElementById('current-year').textContent=new Date().getFullYear();
+  const el = (tag, className, value) => { const node = document.createElement(tag); if (className) node.className = className; if (value !== undefined) node.textContent = value; return node; };
+  function safeUrl(value) {
+    if (!value) return null;
+    try { const url = new URL(value, document.baseURI); return ['https:', 'http:'].includes(url.protocol) ? url.href : null; } catch { return null; }
   }
-  document.getElementById('language-toggle').addEventListener('click',()=>{lang=lang==='en'?'zh':'en';try{localStorage.setItem('homepage-language',lang);}catch{}render();});
-  if('IntersectionObserver' in window){const navLinks=[...document.querySelectorAll('nav a')];const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(a=>{if(a.hash==='#'+entry.target.id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});}});},{rootMargin:'-15% 0px -55% 0px',threshold:0});document.querySelectorAll('main>section').forEach(s=>observer.observe(s));}
+  function externalLink(item, className = '') {
+    const url = safeUrl(item.url); if (!url) return null;
+    const anchor = el('a', className, localized(item.label)); anchor.href = url; anchor.setAttribute('aria-label', localized(item.label)); anchor.target = '_blank'; anchor.rel = 'noopener noreferrer'; return anchor;
+  }
+  function resourceIcon() {
+    const ns = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('viewBox', '0 0 24 24'); svg.setAttribute('fill', 'none'); svg.setAttribute('stroke', 'currentColor'); svg.setAttribute('stroke-width', '1.5'); svg.setAttribute('stroke-linecap', 'round'); svg.setAttribute('stroke-linejoin', 'round'); svg.setAttribute('aria-hidden', 'true');
+    const path = document.createElementNS(ns, 'path'); path.setAttribute('d', 'M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8l-5-5Z M14 3v5h5 M8.5 12h7 M8.5 15.5h7'); svg.append(path); return svg;
+  }
+  function closeResources(except) { document.querySelectorAll('.pub-resources[open]').forEach(menu => { if (menu !== except) menu.open = false; }); }
+  function render() {
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    document.title = `${lang === 'zh' ? (profile.chineseName || profile.name) : profile.name} · ${lang === 'zh' ? '个人主页' : 'Academic Homepage'}`;
+    document.querySelectorAll('[data-i18n]').forEach(node => { node.textContent = strings[lang][node.dataset.i18n]; });
+    document.querySelectorAll('[data-name]').forEach(node => { node.textContent = profile.name; });
+    document.querySelectorAll('[data-chinese-name]').forEach(node => { node.textContent = profile.chineseName || ''; });
+    document.querySelectorAll('[data-profile]').forEach(node => { node.textContent = localized(profile[node.dataset.profile]); });
+    const toggle = document.getElementById('language-toggle'); toggle.textContent = lang === 'en' ? '中文' : 'EN'; toggle.setAttribute('aria-label', lang === 'en' ? '切换为中文' : 'Switch to English');
+    const email = document.getElementById('email-link'); email.textContent = profile.email; email.href = 'mailto:' + profile.email;
+    const profiles = document.getElementById('profile-links'); profiles.replaceChildren();
+    (profile.links || []).forEach(item => { const link = externalLink(item); if (link) profiles.append(link); });
+    document.getElementById('research-topics').replaceChildren(...profile.interests.map(topic => el('span', 'topic', localized(topic))));
+    const education = document.getElementById('education-list'); education.replaceChildren();
+    profile.education.forEach(item => {
+      const row = el('article', 'education-item'); row.append(el('div', 'education-year', localized(item.years)));
+      const content = el('div', 'education-content'); content.append(el('h3', 'education-degree', localized(item.degree)), el('p', 'education-institution', localized(item.institution)));
+      if (localized(item.note)) content.append(el('p', 'education-note', localized(item.note)));
+      row.append(content); education.append(row);
+    });
+    const publications = document.getElementById('publication-list'); publications.replaceChildren();
+    if (!profile.publications.length) publications.append(el('p', 'empty-publications', strings[lang].empty));
+    profile.publications.forEach(pub => {
+      const row = el('article', 'publication'); row.append(el('div', 'pub-year', pub.year));
+      const content = el('div', 'pub-content'); content.append(el('h3', 'pub-title', localized(pub.title)));
+      const authors = el('p', 'pub-authors'); localized(pub.authors).split(profile.name).forEach((part, index) => { if (index) authors.append(el('strong', '', profile.name)); authors.append(document.createTextNode(part)); }); content.append(authors, el('p', 'pub-venue', localized(pub.venue))); row.append(content);
+      const links = (pub.links || []).map(item => externalLink(item)).filter(Boolean);
+      if (links.length) {
+        const resources = el('details', 'pub-resources'); const summary = el('summary'); const label = `${strings[lang].resources} ${localized(pub.title)}`;
+        summary.setAttribute('aria-label', label); summary.title = label; summary.append(resourceIcon());
+        const panel = el('div', 'resource-menu'); links.forEach(link => { link.append(el('span', 'resource-arrow', '↗')); panel.append(link); }); resources.append(summary, panel);
+        resources.addEventListener('toggle', () => { if (resources.open) closeResources(resources); }); row.append(resources);
+      }
+      publications.append(row);
+    });
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  }
+  document.getElementById('language-toggle').addEventListener('click', () => { lang = lang === 'en' ? 'zh' : 'en'; try { localStorage.setItem('homepage-language', lang); } catch {} render(); });
+  document.addEventListener('click', event => { if (!event.target.closest('.pub-resources')) closeResources(); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') { const active = document.activeElement.closest('.pub-resources'); closeResources(); if (active) active.querySelector('summary').focus(); } });
+  if ('IntersectionObserver' in window) {
+    const links = [...document.querySelectorAll('nav a')];
+    const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) links.forEach(link => { if (link.hash === '#' + entry.target.id) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); }); }); }, { rootMargin: '-15% 0px -55% 0px', threshold: 0 });
+    document.querySelectorAll('main > section').forEach(section => observer.observe(section));
+  }
   render();
 })();

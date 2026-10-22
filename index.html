@@ -3,10 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Hongyi Chen (陈弘毅), Nanjing University. Research in theoretical computer science, graph algorithms, and streaming algorithms.">
+  <meta name="description" content="Hongyi Chen (陈弘毅), Nanjing University. Research in theoretical computer science, graph algorithms, streaming algorithms, and dynamic algorithms.">
   <meta name="theme-color" content="#faf9f6">
   <title>Hongyi Chen · Academic Homepage</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/source-serif-4-normal-400_700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/inter-normal-400_700-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
   <script src="profile.js" defer></script>
   <script src="main.js" defer></script>
@@ -20,7 +22,7 @@
         <a href="#about" data-i18n="navAbout" aria-current="location">About</a>
         <a href="#research" data-i18n="navResearch">Research</a>
         <a href="#publications" data-i18n="navPublications">Publications</a>
-        <a href="#contact" data-i18n="navContact">Contact</a>
+        <a href="#education" data-i18n="navEducation">Education</a>
       </nav>
       <button class="language-button" id="language-toggle" type="button" aria-label="切换为中文">中文 <span aria-hidden="true">↗</span></button>
     </div>
@@ -31,10 +33,12 @@
       <div class="intro-copy">
         <p class="eyebrow" data-i18n="field">THEORETICAL COMPUTER SCIENCE</p>
         <h1 id="name-heading"><span data-name>Hongyi Chen</span><span class="chinese-name" data-chinese-name>陈弘毅</span></h1>
-        <p class="position" data-profile="position">Theory Group · Nanjing University</p>
-        <p class="bio" data-profile="bio">I am Hongyi Chen (陈弘毅) at Nanjing University. My research is in theoretical computer science, with a focus on graph algorithms and streaming algorithms.</p>
-        <div class="intro-links"><a href="#contact" class="text-link"><span data-i18n="getInTouch">Get in touch</span><span aria-hidden="true">↗</span></a><span class="link-dot" aria-hidden="true">·</span><a href="#publications" data-i18n="viewPublications">View publications</a></div>
-        <p class="template-note hidden" id="template-note"><span class="note-dot" aria-hidden="true"></span><span data-i18n="templateNote">Personal details are placeholders.</span></p>
+        <p class="position" data-profile="position">Ph.D. student · Nanjing University</p>
+        <p class="bio" data-profile="bio">I am a Ph.D. student in the Theory Group at Nanjing University. I work on theoretical computer science, with a particular interest in graph algorithms.</p>
+        <div class="intro-contact">
+          <a id="email-link" href="mailto:hychener01@gmail.com">hychener01@gmail.com</a>
+          <div class="profile-links" id="profile-links"></div>
+        </div>
       </div>
       <figure class="research-figure" aria-label="A simple graph illustration">
         <svg viewBox="0 0 260 260" role="img" aria-labelledby="graph-title"><title id="graph-title">A graph with connected vertices</title>
@@ -51,19 +55,18 @@
 
     <section id="research" class="content-section section-anchor" aria-labelledby="research-heading">
       <div class="section-heading"><h2 id="research-heading" data-i18n="researchTitle">Research interests</h2><span class="section-number" aria-hidden="true">01</span></div>
-      <div class="research-body"><p class="section-intro" data-profile="researchIntro">I study the design and analysis of algorithms, especially graph problems under limited memory and algorithms in metric spaces.</p><div class="research-topics" id="research-topics"></div><p class="small-note hidden" id="research-note" data-i18n="researchNote">Example areas; replace with your own research interests.</p></div>
+      <div class="research-body"><p class="section-intro" data-profile="researchIntro">My research interests are in graph algorithms, particularly streaming and dynamic algorithms.</p><div class="research-topics" id="research-topics"></div></div>
     </section>
 
     <section id="publications" class="content-section section-anchor" aria-labelledby="publications-heading">
-      <div class="section-heading"><h2 id="publications-heading" data-i18n="publicationsTitle">Selected publications</h2><span class="section-number" aria-hidden="true">02</span></div>
-      <p class="section-intro publications-intro" data-i18n="publicationsIntro">Papers, preprints, and other research work.</p>
+      <div class="section-heading"><h2 id="publications-heading" data-i18n="publicationsTitle">Publications</h2><span class="section-number" aria-hidden="true">02</span></div>
+      <p class="author-note"><em data-i18n="authorNote">Authors are listed alphabetically unless otherwise stated.</em></p>
       <div id="publication-list"></div>
-      <p class="small-note hidden" id="publications-note" data-i18n="publicationsNote">The entries above show the layout only; no actual publications have been added.</p>
     </section>
 
-    <section id="contact" class="content-section contact-section section-anchor" aria-labelledby="contact-heading">
-      <div class="section-heading"><h2 id="contact-heading" data-i18n="contactTitle">Contact</h2><span class="section-number" aria-hidden="true">03</span></div>
-      <div class="contact-body"><div><p data-i18n="contactIntro">For research conversations and academic correspondence.</p><div id="email-container"></div><p class="small-note" data-profile="location">Nanjing University · Nanjing, China</p></div><div class="profile-links" id="profile-links"></div></div>
+    <section id="education" class="content-section section-anchor" aria-labelledby="education-heading">
+      <div class="section-heading"><h2 id="education-heading" data-i18n="educationTitle">Education</h2><span class="section-number" aria-hidden="true">03</span></div>
+      <div id="education-list"></div>
     </section>
   </main>
   <footer class="site-footer"><div><span>© <span id="current-year"></span> <span data-name>Hongyi Chen</span></span><span class="footer-separator">/</span><span data-i18n="footerTag">Ideas, proofs, and open questions.</span></div><a href="#about"><span data-i18n="backToTop">Back to top</span><span aria-hidden="true">↑</span></a></footer>
