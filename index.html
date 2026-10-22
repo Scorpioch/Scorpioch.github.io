@@ -17,59 +17,43 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="wordmark" href="#about" aria-label="Homepage"><span class="mark" aria-hidden="true">∴</span><span data-name>Hongyi Chen</span></a>
       <nav aria-label="Main navigation">
-        <a href="#about" data-i18n="navAbout" aria-current="location">About</a>
-        <a href="#research" data-i18n="navResearch">Research</a>
-        <a href="#publications" data-i18n="navPublications">Publications</a>
-        <a href="#education" data-i18n="navEducation">Education</a>
+        <a href="#about" aria-current="location">About</a>
+        <a href="#publications">Publications</a>
+        <a href="#education">Education</a>
       </nav>
-      <button class="language-button" id="language-toggle" type="button" aria-label="切换为中文">中文 <span aria-hidden="true">↗</span></button>
     </div>
   </header>
 
   <main id="main" class="page">
     <section id="about" class="intro section-anchor" aria-labelledby="name-heading">
       <div class="intro-copy">
-        <p class="eyebrow" data-i18n="field">THEORETICAL COMPUTER SCIENCE</p>
         <h1 id="name-heading"><span data-name>Hongyi Chen</span><span class="chinese-name" data-chinese-name>陈弘毅</span></h1>
         <p class="position" data-profile="position">Ph.D. student · Nanjing University</p>
-        <p class="bio" data-profile="bio">I am a Ph.D. student in the Theory Group at Nanjing University. I work on theoretical computer science, with a particular interest in graph algorithms.</p>
         <div class="intro-contact">
-          <a id="email-link" href="mailto:hychener01@gmail.com">hychener01@gmail.com</a>
-          <div class="profile-links" id="profile-links"></div>
+          <div class="email-row">
+            <span class="email-icon" aria-hidden="true"></span>
+            <a id="email-link" href="mailto:hychener01@gmail.com">hychener01@gmail.com</a>
+            <button id="email-copy" class="email-copy" type="button" aria-label="Copy email address" title="Copy email address" hidden><span class="copy-feedback" aria-hidden="true">Copied</span></button>
+            <span id="email-status" class="sr-only" role="status" aria-live="polite"></span>
+          </div>
         </div>
+        <p class="bio" data-profile="bio">I am a Ph.D. student in the <a href="https://tcs.nju.edu.cn/" target="_blank" rel="noopener noreferrer">Theory Group</a> at Nanjing University. I am advised by <a href="https://cs.nju.edu.cn/zhangty/" target="_blank" rel="noopener noreferrer">Prof. Tianyi Zhang</a> and <a href="https://tcs.nju.edu.cn/yinyt/" target="_blank" rel="noopener noreferrer">Prof. Yitong Yin</a>.</p>
+        <p class="bio research-summary" data-profile="researchIntro">My research interests are in graph algorithms, particularly streaming and dynamic algorithms.</p>
       </div>
-      <figure class="research-figure" aria-label="A simple graph illustration">
-        <svg viewBox="0 0 260 260" role="img" aria-labelledby="graph-title"><title id="graph-title">A graph with connected vertices</title>
-          <defs><pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".65" fill="#d9ddd8"/></pattern></defs>
-          <rect width="260" height="260" fill="url(#dots)"/>
-          <g stroke="#9daea8" stroke-width="1.15" fill="none"><path d="M66 68L177 46L210 128L160 205L57 174L66 68L133 119L177 46M57 174L133 119L160 205M133 119L210 128M66 68L160 205M177 46L57 174"/></g>
-          <path d="M66 68L133 119L210 128" fill="none" stroke="#315e52" stroke-width="2"/>
-          <g fill="#faf9f6" stroke="#55766b" stroke-width="1.6"><circle cx="66" cy="68" r="5"/><circle cx="177" cy="46" r="5"/><circle cx="210" cy="128" r="5"/><circle cx="160" cy="205" r="5"/><circle cx="57" cy="174" r="5"/></g><circle cx="133" cy="119" r="6" fill="#315e52"/>
-          <g fill="#64736e" font-family="Georgia,serif" font-style="italic" font-size="13"><text x="47" y="57">v₁</text><text x="181" y="32">v₂</text><text x="221" y="132">v₃</text><text x="165" y="228">v₄</text><text x="34" y="192">v₅</text><text x="139" y="105">v₆</text></g>
-        </svg>
-        <figcaption><span>G = (V, E)</span><span data-i18n="graphCaption">A little structure.</span></figcaption>
-      </figure>
-    </section>
-
-    <section id="research" class="content-section section-anchor" aria-labelledby="research-heading">
-      <div class="section-heading"><h2 id="research-heading" data-i18n="researchTitle">Research interests</h2><span class="section-number" aria-hidden="true">01</span></div>
-      <div class="research-body"><p class="section-intro" data-profile="researchIntro">My research interests are in graph algorithms, particularly streaming and dynamic algorithms.</p><div class="research-topics" id="research-topics"></div></div>
     </section>
 
     <section id="publications" class="content-section section-anchor" aria-labelledby="publications-heading">
-      <div class="section-heading"><h2 id="publications-heading" data-i18n="publicationsTitle">Publications</h2><span class="section-number" aria-hidden="true">02</span></div>
-      <p class="author-note"><em data-i18n="authorNote">Authors are listed alphabetically unless otherwise stated.</em></p>
+      <div class="section-heading"><h2 id="publications-heading">Publications</h2></div>
+      <p class="author-note"><em>Authors are listed alphabetically unless otherwise stated.</em></p>
       <div id="publication-list"></div>
     </section>
 
     <section id="education" class="content-section section-anchor" aria-labelledby="education-heading">
-      <div class="section-heading"><h2 id="education-heading" data-i18n="educationTitle">Education</h2><span class="section-number" aria-hidden="true">03</span></div>
+      <div class="section-heading"><h2 id="education-heading">Education</h2></div>
       <div id="education-list"></div>
     </section>
   </main>
-  <footer class="site-footer"><div><span>© <span id="current-year"></span> <span data-name>Hongyi Chen</span></span><span class="footer-separator">/</span><span data-i18n="footerTag">Ideas, proofs, and open questions.</span></div><a href="#about"><span data-i18n="backToTop">Back to top</span><span aria-hidden="true">↑</span></a></footer>
-  <noscript><p class="noscript-note">Please enable JavaScript to view publication details and switch languages. 请启用 JavaScript 查看完整内容。</p></noscript>
+  <noscript><p class="noscript-note">Please enable JavaScript to view publications and education details.</p></noscript>
 </body>
 </html>

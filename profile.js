@@ -7,27 +7,13 @@ window.PROFILE = {
     "zh": "南京大学 · 博士研究生"
   },
   "bio": {
-    "en": "I am a Ph.D. student in the Theory Group at Nanjing University. I work on theoretical computer science, with a particular interest in graph algorithms.",
-    "zh": "我是陈弘毅，南京大学理论计算机科学方向博士研究生，主要研究图算法。"
+    "en": "I am a Ph.D. student in the Theory Group at Nanjing University.",
+    "zh": "我是陈弘毅，南京大学理论计算机科学方向博士研究生。"
   },
   "researchIntro": {
     "en": "My research interests are in graph algorithms, particularly streaming and dynamic algorithms.",
     "zh": "我的研究兴趣是图算法，尤其是流式算法与动态算法。"
   },
-  "interests": [
-    {
-      "en": "Graph algorithms",
-      "zh": "图算法"
-    },
-    {
-      "en": "Streaming algorithms",
-      "zh": "流式算法"
-    },
-    {
-      "en": "Dynamic algorithms",
-      "zh": "动态算法"
-    }
-  ],
   "publications": [
     {
       "year": "2027",
@@ -37,12 +23,7 @@ window.PROFILE = {
         "en": "ACM–SIAM Symposium on Discrete Algorithms (SODA 2027) · To appear",
         "zh": "ACM–SIAM Symposium on Discrete Algorithms (SODA 2027) · 待发表"
       },
-      "links": [
-        {
-          "label": "Accepted papers",
-          "url": "https://www.siam.org/conferences-events/siam-conferences/soda27/program/accepted-papers/"
-        }
-      ]
+      "links": []
     },
     {
       "year": "2026",
@@ -53,10 +34,6 @@ window.PROFILE = {
         {
           "label": "arXiv",
           "url": "https://arxiv.org/abs/2605.07644"
-        },
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.4230/LIPIcs.ICALP.2026.56"
         },
         {
           "label": "Slides",
@@ -75,26 +52,13 @@ window.PROFILE = {
           "url": "https://arxiv.org/abs/2504.16470"
         },
         {
-          "label": "DOI",
-          "url": "https://doi.org/10.4230/LIPIcs.ICALP.2025.48"
+          "label": "Slides",
+          "url": "slides/icalp-2025-streaming-edge-coloring.pdf"
         }
       ]
     }
   ],
   "email": "hychener01@gmail.com",
-  "links": [
-    {
-      "label": "TCS @ NJU",
-      "url": "https://tcs.nju.edu.cn/"
-    },
-    {
-      "label": {
-        "en": "Nanjing University",
-        "zh": "南京大学"
-      },
-      "url": "https://www.nju.edu.cn/"
-    }
-  ],
   "education": [
     {
       "years": {
@@ -108,17 +72,13 @@ window.PROFILE = {
       "institution": {
         "en": "Nanjing University",
         "zh": "南京大学"
-      },
-      "note": {
-        "en": "Transferred from the master’s program in 2025.",
-        "zh": "2025 年由硕士阶段转入博士阶段。"
       }
     },
     {
       "years": "2023–2025",
       "degree": {
-        "en": "Master’s studies",
-        "zh": "硕士阶段"
+        "en": "Master’s student",
+        "zh": "硕士研究生"
       },
       "institution": {
         "en": "Nanjing University",
@@ -136,5 +96,19 @@ window.PROFILE = {
         "zh": "南京大学"
       }
     }
-  ]
+  ],
+  "advisors": [
+    {
+      "name": "Tianyi Zhang",
+      "url": "https://cs.nju.edu.cn/zhangty/"
+    },
+    {
+      "name": "Yitong Yin",
+      "url": "https://tcs.nju.edu.cn/yinyt/"
+    }
+  ],
+  "theoryGroup": {
+    "label": "Theory Group",
+    "url": "https://tcs.nju.edu.cn/"
+  }
 };
